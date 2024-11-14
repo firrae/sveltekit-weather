@@ -2,6 +2,7 @@
 	import * as Form from "$lib/components/ui/form/index.js";
 	import * as Card from "$lib/components/ui/card/index.js";
 	import { Input } from "$lib/components/ui/input/index.js";
+	import { Button } from "$lib/components/ui/button";
 	import { superForm, type FormResult } from "sveltekit-superforms";
 	import { zodClient } from "sveltekit-superforms/adapters";
 
@@ -76,7 +77,9 @@
 				<Form.FieldErrors />
 			</Form.Field>
 
-			<Form.Button>Submit</Form.Button>
+			<br />
+
+			<Button type="Submit">Submit</Button>
 		</form>
 	</Card.Content>
 </Card.Root>

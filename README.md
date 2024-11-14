@@ -5,6 +5,11 @@
 - Run NPM install to install dependencies.
 - Run `npm run dev` to start the application in development mode.
 
+### Playwright Tests
+
+- To run use `npm run playwright` or `npm run playwright-ui` if you would like the UI,
+- To see the generated report use `npm run playwright-report`,
+
 ### Resources Used
 
 - Node 22.11.0

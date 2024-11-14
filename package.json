@@ -8,7 +8,10 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "playwright": "playwright test",
+    "playwright-ui": "playwright test --ui",
+    "playwright-report": "playwright show-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.2",

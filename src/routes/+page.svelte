@@ -46,7 +46,7 @@
 			</Tabs.Content>
 		</Tabs.Root>
 	</div>
-	<div class="flex-1">
+	<div class="flex-1" id="weatherBox">
 		<!-- This is for debugging purposes only -->
 		<!-- <pre class="text-sm dark:text-gray-600">{JSON.stringify(
 				weatherData,
@@ -55,22 +55,25 @@
 			)}</pre> -->
 		<div class="flex flex-col items-center p-8 rounded-md w-60 sm:px-12">
 			<div class="text-center">
-				<h2 class="text-xl font-semibold">
+				<h2 class="text-xl font-semibold" id="location">
 					{weatherData?.location ?? "Unknown"}
 				</h2>
-				<p class="text-sm dark:text-gray-600">{weatherData?.date}</p>
+				<p class="text-sm dark:text-gray-600" id="weatherDate">
+					{weatherData?.date}
+				</p>
 			</div>
 			<img
 				src={`https://openweathermap.org/img/wn/${weatherData?.weather ? weatherData?.weather[0]?.icon : "03d"}@2x.png`}
 				alt="weather"
 				class="w-20 h-20"
+				id="weatherIcon"
 			/>
-			<div class="mb-2 font-semibold">
+			<div class="mb-2 font-semibold" id="current">
 				Currently: <spam class="text-2xl"
 					>{Math.round(weatherData?.main?.temp)}°</spam
 				>
 			</div>
-			<div class="mb-2 font-semibold">
+			<div class="mb-2 font-semibold" id="highLow">
 				High: <span class="text-xl"
 					>{Math.round(weatherData?.main?.temp_max)}°</span
 				>
