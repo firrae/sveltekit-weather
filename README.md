@@ -14,3 +14,22 @@
 - [country-state-city](https://www.npmjs.com/package/country-state-city)
 - [superforms](https://superforms.rocks)
 - [formsnap](https://formsnap.dev/)
+
+### Example Inputs
+#### City Search
+
+- Canada, Ontario, Sarnia
+- United States of America, Washington, Seattle
+
+#### Zip/Postal Code Search
+
+- Canada, A0E2M0
+- United States of America, 90210
+- United Kingdom, E14
+
+#### Geo Coordinates
+
+- lat: 31.222220, lon: 121.458060
+- lat: -6.21462, lon: 106.84513
+- lat: 72.6992, lon: -77.9595
+- lat: -77.84632, lon: 166.66824
