@@ -19,12 +19,12 @@
 #### City Search
 
 - Canada, Ontario, Sarnia
-- United States of America, Washington, Seattle
+- United States, Washington, Seattle
 
 #### Zip/Postal Code Search
 
 - Canada, A0E2M0
-- United States of America, 90210
+- United States, 90210
 - United Kingdom, E14
 
 #### Geo Coordinates
