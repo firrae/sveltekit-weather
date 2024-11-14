@@ -16,6 +16,11 @@ export const load: PageServerLoad = async () => {
     };
 };
 
+// Server side actions to protect the API key
+// Each action will call the OpenWeatherMap API with the API key
+// Each search type gets a different action as they have different form schemas
+// This could be unified into a single action, but this is a more maintainable logic flow
+// The sections of the actions could be abstracted into a helper function to reduce duplication and improve maintainability and testability
 export const actions = {
     citySearch: async (event) => {
         const form = await superValidate(event, zod(cityFormSchema));
@@ -25,6 +30,7 @@ export const actions = {
         const locQuery = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${province},${country}&limit=1&appid=${open_weather_map_api}`;
         const locRes = await fetch(locQuery);
         if (!locRes.ok) {
+            // Location query error so fail
             return fail(locRes.status, {
                 error: await locRes.text(),
             });
@@ -32,6 +38,7 @@ export const actions = {
 
         const locData = await locRes.json();
         if (!locData.length) {
+            // No location found so return error
             return error(404, "City not found");
         }
 
@@ -41,13 +48,16 @@ export const actions = {
         const weatherQuery = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${open_weather_map_api}`;
         const weatherRes = await fetch(weatherQuery);
         if (!weatherRes.ok) {
+            // Weather query error so fail
             return fail(weatherRes.status, {
                 error: await weatherRes.text(),
             });
         }
 
+        // Convert the weather data to JSON
         const weatherData = await weatherRes.json();
 
+        // Return the form and weather data with extra Date info for when call was resolved
         return {
             form,
             weatherData: { ...weatherData, date: new Date(), },

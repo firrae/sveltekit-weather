@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+// Form schema for the city search
 export const cityFormSchema = z.object({
     country: z.string().min(2).max(3),
     province: z.string().min(2).max(3),

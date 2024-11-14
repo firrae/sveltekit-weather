@@ -7,10 +7,14 @@
 	import { superForm, type FormResult } from "sveltekit-superforms";
 	import { zodClient } from "sveltekit-superforms/adapters";
 
+	// Ideally this would be in a DB and fetched from the server as it's so large
 	import { Country, State, type IState } from "country-state-city";
 
 	import type { ActionData, PageData } from "./$types";
 
+	// Props
+	// Binds the value of the resulting weather data to the parent state
+	// Recieves the units from the parent
 	let {
 		data = { country: "", province: "", city: "" },
 		weatherData = $bindable(),
@@ -39,7 +43,7 @@
 	const { form: formData, enhance: cityEnhance } = form;
 
 	$effect(() => {
-		$formData.units = units;
+		$formData.units = units; // This seems hacky, but I don't see a better option right now
 	});
 
 	let countryList = Country.getAllCountries();

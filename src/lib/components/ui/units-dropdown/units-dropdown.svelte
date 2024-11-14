@@ -1,8 +1,11 @@
 <script lang="ts">
 	import * as Select from "$lib/components/ui/select/index.js";
 
+	// Props
+	// Binds the value of the dropdown to the parent state
 	let { units = $bindable(""), ...props } = $props();
 
+	// Valie units
 	const unitsList = [
 		{ value: "imperial", label: "Imperial" },
 		{ value: "metric", label: "Metric" },

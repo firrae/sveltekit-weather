@@ -8,6 +8,9 @@
 	import type { ActionData, PageData } from "./$types";
 	import { geoFormSchema } from "./geoSchema";
 
+	// Props
+	// Binds the value of the resulting weather data to the parent state
+	// Recieves the units from the parent
 	let {
 		data = { latitude: 0, longitude: 0 },
 		weatherData = $bindable(),
@@ -36,7 +39,7 @@
 	const { form: formData, enhance: geoEnhance } = form;
 
 	$effect(() => {
-		$formData.units = units;
+		$formData.units = units; // This seems hacky, but I don't see a better option right now
 	});
 </script>
 

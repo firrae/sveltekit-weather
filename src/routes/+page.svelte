@@ -9,12 +9,15 @@
 
 	let { data } = $props<{ data: PageData }>();
 
+	// Default weather data
 	let weatherData = $state({
 		location: "Unknown",
 		date: new Date(),
 		main: { temp: 0, temp_max: 0, temp_min: 0 },
 		weather: [{ description: "unknown", icon: "03d" }],
 	});
+
+	// Defaults measurement units
 	let units = $state("imperial");
 </script>
 
@@ -22,6 +25,7 @@
 	<title>Weather Lookup</title>
 </svelte:head>
 
+<!-- This isn't overly pretty, but it works -->
 <div class="flex flex-row items-center justify-center px-8">
 	<div class="flex-1">
 		<UnitsDropdown class="pt-3" bind:units />
