@@ -18,6 +18,10 @@
 	let units = $state("imperial");
 </script>
 
+<svelte:head>
+	<title>Weather Lookup</title>
+</svelte:head>
+
 <div class="flex flex-row items-center justify-center px-8">
 	<div class="flex-1">
 		<UnitsDropdown class="pt-3" bind:units />
