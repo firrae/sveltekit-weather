@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 
+// I think I can run the direct API query here to better determine the expected results, but my personal key is being throttled it seems so I can't test it
 test.beforeEach(async ({ page }) => {
     await page.goto('http://127.0.0.1:5173/');
     await expect(page.locator('#location')).toContainText('Unknown');
