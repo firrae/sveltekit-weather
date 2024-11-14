@@ -1,38 +1,16 @@
-# sv
+## How to run
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+- Download the code to a machine with an LTS release of Node, this was written with Node 22.11.0.
+- Create a `.env` file with your OpenWeatherMap API key like so: `open_weather_map_api=XXXXXXXXXXX`.
+- Run NPM install to install dependencies.
+- Run `npm run dev` to start the application in development mode.
 
-## Creating a project
+### Resources Used
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- Node 22.11.0
+- SvelteKit 5
+- Tailwind CSS
+- [shadcn-svelte](https://next.shadcn-svelte.com)
+- [country-state-city](https://www.npmjs.com/package/country-state-city)
+- [superforms](https://superforms.rocks)
+- [formsnap](https://formsnap.dev/)
